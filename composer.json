@@ -1,0 +1,30 @@
+{
+    "name": "worksome/route-checker",
+    "description": "Checks if routes has valid controllers",
+    "type": "library",
+    "require": {
+        "php": "^8",
+        "illuminate/console": "^8.63",
+        "illuminate/routing": "^8.63",
+        "illuminate/support": "^8.63"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Worksome\\RouteChecker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oliver Nybroe",
+            "email": "oliver@worksome.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Worksome\\RouteChecker\\RouteCheckerServiceProvider"
+            ]
+        }
+    }
+}
