@@ -44,6 +44,12 @@ class RouteCheckCommand extends Command
             $route->getActionName(),
         ]);
 
+        if ($invalidRoutes->isEmpty()) {
+            $this->info('No invalid routes found');
+
+            return self::SUCCESS;
+        }
+
         $this->error("Found {$invalidRoutes->count()} invalid routes");
 
         $this->table(
@@ -51,6 +57,6 @@ class RouteCheckCommand extends Command
             $invalidRoutes->all(),
         );
 
-        return $invalidRoutes->isNotEmpty() ? 1 : 0;
+        return self::FAILURE;
     }
 }
