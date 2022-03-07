@@ -4,9 +4,9 @@
     "type": "library",
     "require": {
         "php": "^8",
-        "illuminate/console": "^8.63",
-        "illuminate/routing": "^8.63",
-        "illuminate/support": "^8.63"
+        "illuminate/console": "^9.0",
+        "illuminate/routing": "^9.0",
+        "illuminate/support": "^9.0"
     },
     "license": "MIT",
     "autoload": {
