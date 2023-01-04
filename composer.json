@@ -3,10 +3,10 @@
     "description": "Checks if routes has valid controllers",
     "type": "library",
     "require": {
-        "php": "^8.0",
-        "illuminate/console": "^8.63|^9.0",
-        "illuminate/routing": "^8.63|^9.0",
-        "illuminate/support": "^8.63|^9.0"
+        "php": "^8.2",
+        "illuminate/console": "^9.46",
+        "illuminate/routing": "^9.46",
+        "illuminate/support": "^9.46"
     },
     "license": "MIT",
     "autoload": {
@@ -25,6 +25,15 @@
             "providers": [
                 "Worksome\\RouteChecker\\RouteCheckerServiceProvider"
             ]
+        }
+    },
+    "require-dev": {
+        "worksome/coding-style": "^2.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "worksome/coding-style": true
         }
     }
 }
