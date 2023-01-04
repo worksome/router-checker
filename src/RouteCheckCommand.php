@@ -38,7 +38,7 @@ class RouteCheckCommand extends Command
 
             $controller = Str::parseCallback($route->getAction('uses'));
 
-            return !method_exists(...$controller);
+            return ! method_exists(...$controller);
         })->map(fn(Route $route) => [
             $route->getName() ?? $route->uri(),
             $route->getActionName(),
