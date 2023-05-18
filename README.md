@@ -1,21 +1,21 @@
 # Laravel Route Checker
 
-![Example image](example.jpg)
+![Example image](docs/screenshot.jpg)
 
-Checks if your Laravel routes has valid controllers
+Checks if your Laravel routes have valid controllers.
 
 ## Installation
 
 The package should be installed as a dev dependency, as there is no reason to have it installed in production.
 
-```bash
+```shell
 composer require worksome/route-checker --dev
 ```
 
 ## Usage
 
-To use the package simply run the following artisan command.
+To use the package simply run the following artisan command:
 
-```bash
+```shell
 php artisan route:check
 ```

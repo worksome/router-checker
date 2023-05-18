@@ -10,23 +10,12 @@ use Illuminate\Support\Str;
 
 class RouteCheckCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
+    /** {@inheritdoc} */
     protected $signature = 'route:check';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
+    /** {@inheritdoc} */
     protected $description = 'Checks if all the routes have valid controllers';
 
-    /**
-     * Execute the console command.
-     */
     public function handle(Router $router): int
     {
         $invalidRoutes = collect($router->getRoutes())->filter(function (Route $route) {
