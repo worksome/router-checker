@@ -2,24 +2,39 @@
     "name": "worksome/route-checker",
     "description": "Checks if routes have valid controllers",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": "^8.2",
-        "illuminate/console": "^10.0",
-        "illuminate/routing": "^10.0",
-        "illuminate/support": "^10.0"
+        "illuminate/console": "^10.0 || ^11.0",
+        "illuminate/routing": "^10.0 || ^11.0",
+        "illuminate/support": "^10.0 || ^11.0"
     },
-    "license": "MIT",
+    "require-dev": {
+        "larastan/larastan": "^2.6",
+        "worksome/coding-style": "^2.8"
+    },
     "autoload": {
         "psr-4": {
             "Worksome\\RouteChecker\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Oliver Nybroe",
-            "email": "oliver@worksome.com"
+    "scripts": {
+        "lint": "vendor/bin/ecs --fix",
+        "test:types": "vendor/bin/phpstan analyse",
+        "test:style": "vendor/bin/ecs",
+        "test": [
+            "@test:style",
+            "@test:types"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "worksome/coding-style": true
         }
-    ],
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -27,13 +42,6 @@
             ]
         }
     },
-    "require-dev": {
-        "worksome/coding-style": "^2.5.1"
-    },
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "worksome/coding-style": true
-        }
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

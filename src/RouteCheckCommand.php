@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Worksome\RouteChecker;
 
 use Closure;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class RouteCheckCommand extends Command
@@ -18,7 +21,7 @@ class RouteCheckCommand extends Command
 
     public function handle(Router $router): int
     {
-        $invalidRoutes = collect($router->getRoutes())->filter(function (Route $route) {
+        $invalidRoutes = Collection::make($router->getRoutes())->filter(function (Route $route) {
             $uses = $route->getAction('uses');
 
             if ($uses instanceof Closure) {
@@ -28,7 +31,7 @@ class RouteCheckCommand extends Command
             $controller = Str::parseCallback($route->getAction('uses'));
 
             return ! method_exists(...$controller);
-        })->map(fn(Route $route) => [
+        })->map(fn (Route $route) => [
             $route->getName() ?? $route->uri(),
             $route->getActionName(),
         ]);

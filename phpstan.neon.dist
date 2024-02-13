@@ -1,5 +1,11 @@
+includes:
+    - ./vendor/worksome/coding-style/phpstan.neon
+    - phpstan-baseline.neon
+
 parameters:
+    level: max
     paths:
         - src
-
-    level: 5
+    tmpDir: build/phpstan
+    parallel:
+            processTimeout: 300.0

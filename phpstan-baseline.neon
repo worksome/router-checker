@@ -1,0 +1,36 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, int\\|string\\)\\: bool\\)\\|null, Closure\\(Illuminate\\\\Routing\\\\Route\\)\\: bool given\\.$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, int\\|string\\)\\: array\\{string, string\\}, Closure\\(Illuminate\\\\Routing\\\\Route\\)\\: array\\{string, string\\} given\\.$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of static method Illuminate\\\\Support\\\\Str\\:\\:parseCallback\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$items of static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\) expects Illuminate\\\\Contracts\\\\Support\\\\Arrayable\\<\\(int\\|string\\), mixed\\>\\|iterable\\<\\(int\\|string\\), mixed\\>\\|null, Illuminate\\\\Routing\\\\RouteCollectionInterface given\\.$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$object_or_class of function method_exists expects object\\|string, string\\|null given\\.$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: src/RouteCheckCommand.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: src/RouteCheckCommand.php
