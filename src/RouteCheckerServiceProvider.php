@@ -12,7 +12,7 @@ class RouteCheckerServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                RouteCheckCommand::class
+                RouteCheckCommand::class,
             ]);
         }
     }
