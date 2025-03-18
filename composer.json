@@ -4,27 +4,38 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "illuminate/console": "^10.0 || ^11.0",
-        "illuminate/routing": "^10.0 || ^11.0",
-        "illuminate/support": "^10.0 || ^11.0"
+        "php": "^8.3",
+        "illuminate/console": "^11.0 || ^12.0",
+        "illuminate/routing": "^11.0 || ^12.0",
+        "illuminate/support": "^11.0 || ^12.0"
     },
     "require-dev": {
-        "larastan/larastan": "^2.6",
-        "worksome/coding-style": "^2.8"
+        "larastan/larastan": "^3.1",
+        "nunomaduro/collision": "^7.10 || ^8.1.1",
+        "orchestra/testbench": "^9.12 || ^10.1",
+        "pestphp/pest": "^3.7",
+        "pestphp/pest-plugin-laravel": "^3.1",
+        "worksome/coding-style": "^3.2"
     },
     "autoload": {
         "psr-4": {
             "Worksome\\RouteChecker\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Worksome\\RouteChecker\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "lint": "vendor/bin/ecs --fix",
+        "test:unit": "vendor/bin/pest -p",
         "test:types": "vendor/bin/phpstan analyse",
         "test:style": "vendor/bin/ecs",
         "test": [
             "@test:style",
-            "@test:types"
+            "@test:types",
+            "@test:unit"
         ]
     },
     "config": {
