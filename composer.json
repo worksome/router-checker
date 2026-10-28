@@ -5,17 +5,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "illuminate/console": "^12.0 || ^13.0",
-        "illuminate/routing": "^12.0 || ^13.0",
-        "illuminate/support": "^12.0 || ^13.0"
+        "illuminate/console": "^13.0",
+        "illuminate/routing": "^13.0",
+        "illuminate/support": "^13.0"
     },
     "require-dev": {
         "canvural/larastan-strict-rules": "^3.0",
         "larastan/larastan": "^3.10",
         "nunomaduro/collision": "^8.1.1",
-        "orchestra/testbench": "^10.1 || ^11.0",
-        "pestphp/pest": "^4.4",
-        "pestphp/pest-plugin-laravel": "^4.1",
+        "orchestra/testbench": "^11.3",
+        "pestphp/pest": "^5.3",
+        "pestphp/pest-plugin-laravel": "^5.0",
         "worksome/coding-style": "^6.0"
     },
     "autoload": {
